@@ -26,11 +26,11 @@ class Card {
 
 public:
   Card(Suite suite, Rank rank);
-  Card() = delete;                        // Disable copy constructor
-  Card(const Card &) = delete;            // Disable copy constructor
-  Card &operator=(const Card &) = delete; // Disable assignment operator
-  Card(Card &&) = default;                // Enable move constructor
-  Card &operator=(Card &&) = default;     // Enable move assignment operator
+  Card(Card &&) = default;            // Enable move constructor
+  Card &operator=(Card &&) = default; // Enable move assignment operator
+
+  Rank getRank() const;
+  Suite getSuite() const;
 
 private:
   Suite suite_;
